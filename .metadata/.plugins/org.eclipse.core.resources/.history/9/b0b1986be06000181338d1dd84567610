@@ -1,0 +1,44 @@
+package CcFEA;
+
+/*    */ import jas.engine.SimEngine;
+/*    */ import jas.engine.gui.JAS;
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ public class StartASM
+/*    */ {
+/*    */   public static void main(String[] args)
+/*    */   {
+/* 20 */     ASMModelParams asmModelParams = new ASMModelParams();
+/*    */     
+/* 22 */     SimEngine eng = new SimEngine();
+/* 23 */     JAS jas = new JAS(eng);
+/* 24 */     jas.setVisible(true);
+/*    */    
+/* 26 */     ASMModelJas m = new ASMModelJas();
+/* 27 */     eng.addModel(m);
+/* 28 */     m.setParameters();
+/*    */     
+/* 30 */     if (!asmModelParams.batch)
+/*    */     {
+/* 32 */       ASMObserverJAS o = new ASMObserverJAS();
+/* 33 */       eng.addModel(o);
+/* 34 */       o.setParameters();
+/*    */     }
+/*    */   }
+/*    */ }
+
+
+/* Location:              M:\pc\downloads\sCCFEA-ASM_beta1.jar!\StartASM.class
+ * Java compiler version: 5 (49.0)
+ * JD-Core Version:       0.7.1
+ */

@@ -1,0 +1,58 @@
+package CcFEA;
+
+/*    */ import jas.engine.SimEngine;
+/*    */ import jas.engine.gui.JAS;
+/*    */ 
+/*    */ import org.apache.log4j.Logger;
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ 
+/*    */ public class StartASM
+/*    */ {
+		   final static Logger logger = Logger.getLogger(StartASM.class);
+/*    */   public static void main(String[] args)
+/*    */   {
+/* 20 */     ASMModelParams asmModelParams = new ASMModelParams();
+/*    */     TestLogger("Test");
+/* 22 */     SimEngine eng = new SimEngine();
+/* 23 */     JAS jas = new JAS(eng);
+/* 24 */     jas.setVisible(true);
+/*    */    
+/* 26 */     ASMModelJas m = new ASMModelJas();
+/* 27 */     eng.addModel(m);
+/* 28 */     m.setParameters();
+/*    */     
+/* 30 */     if (!asmModelParams.batch)
+/*    */     {
+/* 32 */       ASMObserverJAS o = new ASMObserverJAS();
+/* 33 */       eng.addModel(o);
+/* 34 */       o.setParameters();
+/*    */     }
+/*    */   }
+/*    */ 
+			private static void TestLogger(String parameter){
+				
+				if(logger.isDebugEnabled()){
+					logger.debug("This is debug : " + parameter);
+				}
+				
+				if(logger.isInfoEnabled()){
+					logger.info("This is info : " + parameter);
+				}
+				
+				logger.warn("This is warn : " + parameter);
+				logger.error("This is error : " + parameter);
+				logger.fatal("This is fatal : " + parameter);
+			}
+}
+/* Location:              M:\pc\downloads\sCCFEA-ASM_beta1.jar!\StartASM.class
+ * Java compiler version: 5 (49.0)
+ * JD-Core Version:       0.7.1
+ */
