@@ -54,10 +54,13 @@ import org.apache.log4j.Logger;
 /*     */   public Graph graph;
 /*     */   
 /*     */   private GraphViewer graphViewer;
-/*     */   
+
+/*     */   final static Logger logger = Logger.getLogger(ASMModelJas.class);
+			public static int count;
 /*     */ 
 /*     */   public void setParameters()
 /*     */   {
+  				logger.info(count++  + "  About to setWotld : " + "ASMModelJas");
 /*  55 */     Sim.openProbe(this.asmModelParams, "Model Parameters");
 /*  56 */     Sim.openProbe(this.bfParams, "BF Parameters");
 /*     */   }

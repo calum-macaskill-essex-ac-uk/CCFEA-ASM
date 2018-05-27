@@ -32,10 +32,11 @@ import org.apache.log4j.Logger;
 /*     */   public int myID;
 /*     */   public static World worldForAgent;
 /*     */   final static Logger logger = Logger.getLogger(Agent.class);
-
+			private static int count;
 /*     */   Agent(Graph g)
 /*     */   {
-/*  35 */     super(g);
+/*  35 */     	super(g);
+				count = 0;
 /*     */   }
 /*     */   
 /*     */ 
@@ -43,7 +44,7 @@ import org.apache.log4j.Logger;
 /*     */ 
 /*     */   public static void setWorld(World aWorld)
 /*     */   {
-	          	logger.info("About to setWotld : " + "Agent");
+	          	logger.info(count++  + "  About to setWotld : " + "Agent");
 /*  43 */     	worldForAgent = aWorld;
 /*     */   }
 /*     */   
@@ -52,7 +53,7 @@ import org.apache.log4j.Logger;
 /*     */ 
 /*     */   public Object setID(int iD)
 /*     */   {
-				logger.info("About to setId : " + "Agent");
+				logger.info(count++  + " About to setId : " + "Agent");
 /*  51 */     	this.myID = iD;
 /*  52 */     	return this;
 /*     */   }
@@ -61,7 +62,7 @@ import org.apache.log4j.Logger;
 /*     */ 
 /*     */   public Object setPosition(double aDouble)
 /*     */   {
-			   	logger.info("About to setPosition : " + "Agent");
+			   	logger.info(count++  + " About to setPosition : " + "Agent");
 /*  59 */     	this.position = aDouble;
 /*  60 */     	return this;
 /*     */   }
@@ -70,7 +71,7 @@ import org.apache.log4j.Logger;
 /*     */ 
 /*     */   public Object setintrate(double rate)
 /*     */   {
-				logger.info("About to setintrate : " + "Agent");
+				logger.info(count++  + " About to setintrate : " + "Agent");
 /*  67 */     	this.intrate = rate;
 /*  68 */     	this.intratep1 = (this.intrate + 1.0D);
 /*  69 */     	return this;
@@ -81,7 +82,7 @@ import org.apache.log4j.Logger;
 /*     */ 
 /*     */   public Object setminHolding$minCash(double holding, double minimumcash)
 /*     */   {
-				logger.info("About to setminHolding$minCash : " + "Agent");
+				logger.info(count++  + " About to setminHolding$minCash : " + "Agent");
 /*  77 */     	this.minholding = holding;
 /*  78 */     	this.mincash = minimumcash;
 /*  79 */     	return this;
@@ -91,7 +92,7 @@ import org.apache.log4j.Logger;
 /*     */ 
 /*     */   public Object setInitialCash(double initcash)
 /*     */   {
-				logger.info("About to setInitialCash : " + "Agent");
+				logger.info(count++  + " About to setInitialCash : " + "Agent");
 /*  86 */     	this.initialcash = initcash;
 /*  87 */     	return this;
 /*     */   }
@@ -104,7 +105,7 @@ import org.apache.log4j.Logger;
 /*     */ 
 /*     */   public Object setInitialHoldings()
 /*     */   {
-				logger.info("About to setInitialHoldings : " + "Agent");
+				logger.info (count++  +  "  About to setInitialHoldings : " + "Agent");
 /*  98 */     	this.profit = 0.0D;
 /*  99 */     	this.wealth = 0.0D;
 /* 100 */     	this.cash = this.initialcash;
@@ -118,7 +119,7 @@ import org.apache.log4j.Logger;
 /*     */ 
 /*     */   public Object getPriceFromWorld()
 /*     */   {
-				logger.info("About to getPriceFromWorld : " + "Agent");
+				logger.info(count++  + "  About to getPriceFromWorld : " + "Agent");
 /* 111 */     	this.price = worldForAgent.getPrice();
 /* 112 */     	return this;
 /*     */   }
@@ -126,7 +127,7 @@ import org.apache.log4j.Logger;
 /*     */ 
 /*     */   public Object getDividendFromWorld()
 /*     */   {
-				logger.info("About to getDividendFromWorld : " + "Agent");
+				logger.info(count++  + " About to getDividendFromWorld : " + "Agent");
 /* 118 */     	this.dividend = worldForAgent.getDividend();
 /* 119 */     	return this;
 /*     */   }
@@ -153,7 +154,7 @@ import org.apache.log4j.Logger;
 /*     */ 
 /*     */   public Object creditEarningsAndPayTaxes()
 /*     */   {
-				logger.info("About to setInitialCash : " + "Agent");
+				logger.info(count++  + " About to setInitialCash : " + "Agent");
 /* 144 */    	getPriceFromWorld();
 /* 145 */     	getDividendFromWorld();
 /*     */     
@@ -185,7 +186,7 @@ import org.apache.log4j.Logger;
 /*     */ 
 /*     */   public double constrainDemand(double slope, double trialprice)
 /*     */   {
-				logger.info("About to constrainDemand : " + "Agent");
+				logger.info(count++  + " About to constrainDemand : " + "Agent");
 /* 175 */     if (this.demand > 0.0D) {
 /* 176 */       if (this.demand * trialprice > this.cash - this.mincash)
 /*     */       {
@@ -217,14 +218,14 @@ import org.apache.log4j.Logger;
 /*     */ 
 /*     */   public double getAgentPosition()
 /*     */   {
-				logger.info("About to getAgentPosition : " + "Agent");
+				logger.info(count++  + " About to getAgentPosition : " + "Agent");
 /* 206 */     return this.position;
 /*     */   }
 /*     */   
 /*     */ 
 /*     */   public double getWealth()
 /*     */   {
-				logger.info("About to getWealth : " + "Agent");
+				logger.info(count++  + " About to getWealth : " + "Agent");
 /* 212 */     return this.wealth;
 /*     */   }
 /*     */   
@@ -232,7 +233,7 @@ import org.apache.log4j.Logger;
 /*     */ 
 /*     */   public double getCash()
 /*     */   {
-				logger.info("About to getCash : " + "Agent");
+				logger.info(count++  + " About to getCash : " + "Agent");
 /* 219 */     return this.cash;
 /*     */   }
 /*     */   
@@ -244,7 +245,7 @@ import org.apache.log4j.Logger;
 /*     */ 
 /*     */   public Object prepareForTrading()
 /*     */   {
-				logger.info("About to prepareForTrading : " + "Agent");
+				logger.info(count++  + " About to prepareForTrading : " + "Agent");
 /* 230 */     return this;
 /*     */   }
 /*     */   
@@ -267,7 +268,7 @@ import org.apache.log4j.Logger;
 /*     */ 
 /*     */   public double getDemandAndSlope$forPrice(double slope, double p)
 /*     */   {
-				logger.info("About to getDemandAndSlope$forPrice : " + "Agent");
+				logger.info(count++  + " About to getDemandAndSlope$forPrice : " + "Agent");
 /* 252 */     return 0.0D;
 /*     */   }
 /*     */   
@@ -277,7 +278,7 @@ import org.apache.log4j.Logger;
 /*     */ 
 /*     */   public Object updatePerformance()
 /*     */   {
-				logger.info("About to updatePerformance : " + "Agent");
+				logger.info(count++  + " About to updatePerformance : " + "Agent");
 /* 261 */     return this;
 /*     */   }
 /*     */ }
