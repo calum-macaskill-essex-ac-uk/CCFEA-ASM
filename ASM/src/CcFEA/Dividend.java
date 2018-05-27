@@ -2,7 +2,7 @@ package CcFEA;
 
 /*     */ import jas.engine.Sim;
 /*     */ //import jas.random.RandomGenerator;
-/*     */ 
+/*     */ import org.apache.log4j.Logger;
 /*     */ 
 /*     */ 
 /*     */ 

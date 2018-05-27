@@ -1,7 +1,8 @@
 package CcFEA;
 
 /*     */ //import java.io.PrintStream;
-/*     */ 
+/*     */ import org.apache.log4j.Logger;
+
 /*     */ public class BitVector
 /*     */ {
 /*     */   int condwords;

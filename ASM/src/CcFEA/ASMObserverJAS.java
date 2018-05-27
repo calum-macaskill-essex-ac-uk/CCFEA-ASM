@@ -11,7 +11,7 @@ import jas.statistics.CrossSection;
 import jas.statistics.functions.MaxArrayFunction;
 /*     */ import jas.statistics.functions.MeanArrayFunction;
 import jas.statistics.functions.MinArrayFunction;
-/*     */ 
+/*     */ import org.apache.log4j.Logger;
 /*     */ 
 /*     */ 
 /*     */ 

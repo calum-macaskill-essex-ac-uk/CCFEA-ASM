@@ -18,6 +18,9 @@ package CcFEA;
 /*     */ import java.util.LinkedList;
 /*     */ import org._3pq.jgrapht.Graph;
 /*     */ import org._3pq.jgrapht.graph.DirectedWeightedMultigraph;
+import org.apache.log4j.Logger;
+
+
 /*     */ 
 /*     */ public class ASMModelJas
 /*     */   extends SimModel

@@ -1,4 +1,4 @@
-package CcFEA;
+import org.apache.log4j.Logger;package CcFEA;
 
 /*      */ import jas.engine.Sim;
 /*      */ //import jas.random.RandomGenerator;

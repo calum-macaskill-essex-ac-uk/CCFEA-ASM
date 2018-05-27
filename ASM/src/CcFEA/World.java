@@ -4,7 +4,7 @@ package CcFEA;
 /*     */ //import jas.random.RandomGenerator;
 /*     */ //import java.io.PrintStream;
 /*     */ import java.util.LinkedList;
-/*     */ 
+/*     */ import org.apache.log4j.Logger;
 /*     */ 
 /*     */ 
 /*     */ 
