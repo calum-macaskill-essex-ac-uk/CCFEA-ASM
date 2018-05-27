@@ -31,18 +31,20 @@ import org.apache.log4j.Logger;
 /*     */   public double dividend;
 /*     */   public int myID;
 /*     */   public static World worldForAgent;
-/*     */   
+/*     */   final static Logger logger = Logger.getLogger(Agent.class);
+
 /*     */   Agent(Graph g)
 /*     */   {
 /*  35 */     super(g);
 /*     */   }
 /*     */   
 /*     */ 
-/*     */ 
+/*     */
 /*     */ 
 /*     */   public static void setWorld(World aWorld)
 /*     */   {
-/*  43 */     worldForAgent = aWorld;
+	          	logger.info("About to setWotld : " + "Agent");
+/*  43 */     	worldForAgent = aWorld;
 /*     */   }
 /*     */   
 /*     */ 
@@ -50,25 +52,28 @@ import org.apache.log4j.Logger;
 /*     */ 
 /*     */   public Object setID(int iD)
 /*     */   {
-/*  51 */     this.myID = iD;
-/*  52 */     return this;
+				logger.info("About to setId : " + "Agent");
+/*  51 */     	this.myID = iD;
+/*  52 */     	return this;
 /*     */   }
 /*     */   
 /*     */ 
 /*     */ 
 /*     */   public Object setPosition(double aDouble)
 /*     */   {
-/*  59 */     this.position = aDouble;
-/*  60 */     return this;
+			   	logger.info("About to setPosition : " + "Agent");
+/*  59 */     	this.position = aDouble;
+/*  60 */     	return this;
 /*     */   }
 /*     */   
 /*     */ 
 /*     */ 
 /*     */   public Object setintrate(double rate)
 /*     */   {
-/*  67 */     this.intrate = rate;
-/*  68 */     this.intratep1 = (this.intrate + 1.0D);
-/*  69 */     return this;
+				logger.info("About to setintrate : " + "Agent");
+/*  67 */     	this.intrate = rate;
+/*  68 */     	this.intratep1 = (this.intrate + 1.0D);
+/*  69 */     	return this;
 /*     */   }
 /*     */   
 /*     */ 
@@ -76,17 +81,19 @@ import org.apache.log4j.Logger;
 /*     */ 
 /*     */   public Object setminHolding$minCash(double holding, double minimumcash)
 /*     */   {
-/*  77 */     this.minholding = holding;
-/*  78 */     this.mincash = minimumcash;
-/*  79 */     return this;
+				logger.info("About to setminHolding$minCash : " + "Agent");
+/*  77 */     	this.minholding = holding;
+/*  78 */     	this.mincash = minimumcash;
+/*  79 */     	return this;
 /*     */   }
 /*     */   
 /*     */ 
 /*     */ 
 /*     */   public Object setInitialCash(double initcash)
 /*     */   {
-/*  86 */     this.initialcash = initcash;
-/*  87 */     return this;
+				logger.info("About to setInitialCash : " + "Agent");
+/*  86 */     	this.initialcash = initcash;
+/*  87 */     	return this;
 /*     */   }
 /*     */   
 /*     */ 
@@ -97,10 +104,11 @@ import org.apache.log4j.Logger;
 /*     */ 
 /*     */   public Object setInitialHoldings()
 /*     */   {
-/*  98 */     this.profit = 0.0D;
-/*  99 */     this.wealth = 0.0D;
-/* 100 */     this.cash = this.initialcash;
-/* 101 */     this.position = 0.0D;
+				logger.info("About to setInitialHoldings : " + "Agent");
+/*  98 */     	this.profit = 0.0D;
+/*  99 */     	this.wealth = 0.0D;
+/* 100 */     	this.cash = this.initialcash;
+/* 101 */     	this.position = 0.0D;
 /*     */     
 /* 103 */     return this;
 /*     */   }
@@ -110,15 +118,17 @@ import org.apache.log4j.Logger;
 /*     */ 
 /*     */   public Object getPriceFromWorld()
 /*     */   {
-/* 111 */     this.price = worldForAgent.getPrice();
-/* 112 */     return this;
+				logger.info("About to getPriceFromWorld : " + "Agent");
+/* 111 */     	this.price = worldForAgent.getPrice();
+/* 112 */     	return this;
 /*     */   }
 /*     */   
 /*     */ 
 /*     */   public Object getDividendFromWorld()
 /*     */   {
-/* 118 */     this.dividend = worldForAgent.getDividend();
-/* 119 */     return this;
+				logger.info("About to getDividendFromWorld : " + "Agent");
+/* 118 */     	this.dividend = worldForAgent.getDividend();
+/* 119 */     	return this;
 /*     */   }
 /*     */   
 /*     */ 
@@ -143,18 +153,19 @@ import org.apache.log4j.Logger;
 /*     */ 
 /*     */   public Object creditEarningsAndPayTaxes()
 /*     */   {
-/* 144 */     getPriceFromWorld();
-/* 145 */     getDividendFromWorld();
+				logger.info("About to setInitialCash : " + "Agent");
+/* 144 */    	getPriceFromWorld();
+/* 145 */     	getDividendFromWorld();
 /*     */     
 /*     */ 
-/* 148 */     this.cash -= (this.price * this.intrate - this.dividend) * this.position;
-/* 149 */     if (this.cash < this.mincash) {
-/* 150 */       this.cash = this.mincash;
-/*     */     }
+/* 148 */     	this.cash -= (this.price * this.intrate - this.dividend) * this.position;
+/* 149 */     	if (this.cash < this.mincash) {
+/* 150 */     	this.cash = this.mincash;
+/*     */     }	
 /*     */     
-/* 153 */     this.wealth = (this.cash + this.price * this.position);
+/* 153 */     	this.wealth = (this.cash + this.price * this.position);
 /*     */     
-/* 155 */     return this;
+/* 155 */     	return this;
 /*     */   }
 /*     */   
 /*     */ 
@@ -174,6 +185,7 @@ import org.apache.log4j.Logger;
 /*     */ 
 /*     */   public double constrainDemand(double slope, double trialprice)
 /*     */   {
+				logger.info("About to constrainDemand : " + "Agent");
 /* 175 */     if (this.demand > 0.0D) {
 /* 176 */       if (this.demand * trialprice > this.cash - this.mincash)
 /*     */       {
@@ -205,12 +217,14 @@ import org.apache.log4j.Logger;
 /*     */ 
 /*     */   public double getAgentPosition()
 /*     */   {
+				logger.info("About to getAgentPosition : " + "Agent");
 /* 206 */     return this.position;
 /*     */   }
 /*     */   
 /*     */ 
 /*     */   public double getWealth()
 /*     */   {
+				logger.info("About to getWealth : " + "Agent");
 /* 212 */     return this.wealth;
 /*     */   }
 /*     */   
@@ -218,6 +232,7 @@ import org.apache.log4j.Logger;
 /*     */ 
 /*     */   public double getCash()
 /*     */   {
+				logger.info("About to getCash : " + "Agent");
 /* 219 */     return this.cash;
 /*     */   }
 /*     */   
@@ -229,6 +244,7 @@ import org.apache.log4j.Logger;
 /*     */ 
 /*     */   public Object prepareForTrading()
 /*     */   {
+				logger.info("About to prepareForTrading : " + "Agent");
 /* 230 */     return this;
 /*     */   }
 /*     */   
@@ -251,6 +267,7 @@ import org.apache.log4j.Logger;
 /*     */ 
 /*     */   public double getDemandAndSlope$forPrice(double slope, double p)
 /*     */   {
+				logger.info("About to getDemandAndSlope$forPrice : " + "Agent");
 /* 252 */     return 0.0D;
 /*     */   }
 /*     */   
@@ -260,6 +277,7 @@ import org.apache.log4j.Logger;
 /*     */ 
 /*     */   public Object updatePerformance()
 /*     */   {
+				logger.info("About to updatePerformance : " + "Agent");
 /* 261 */     return this;
 /*     */   }
 /*     */ }

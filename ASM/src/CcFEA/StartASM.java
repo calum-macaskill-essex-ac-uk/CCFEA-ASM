@@ -19,8 +19,9 @@ package CcFEA;
 		   final static Logger logger = Logger.getLogger(StartASM.class);
 /*    */   public static void main(String[] args)
 /*    */   {
+			logger.info("Stated Main : " + "StartASM");
 /* 20 */     ASMModelParams asmModelParams = new ASMModelParams();
-/*    */     TestLogger("Test");
+/*    */    // TestLogger("Test");
 /* 22 */     SimEngine eng = new SimEngine();
 /* 23 */     JAS jas = new JAS(eng);
 /* 24 */     jas.setVisible(true);
@@ -35,6 +36,7 @@ package CcFEA;
 /* 33 */       eng.addModel(o);
 /* 34 */       o.setParameters();
 /*    */     }
+			logger.info("Finished Main : " + "StartASM");
 /*    */   }
 /*    */ 
 			private static void TestLogger(String parameter){

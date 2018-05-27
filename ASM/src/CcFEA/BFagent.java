@@ -1,4 +1,4 @@
-import org.apache.log4j.Logger;package CcFEA;
+package CcFEA;
 
 /*      */ import jas.engine.Sim;
 /*      */ //import jas.random.RandomGenerator;
@@ -6,7 +6,7 @@ import org.apache.log4j.Logger;package CcFEA;
 /*      */ //import java.io.PrintStream;
 /*      */ import java.util.LinkedList;
 /*      */ import org._3pq.jgrapht.Graph;
-/*      */ 
+/*      */// import org.apache.log4j.Logger;
 /*      */ 
 /*      */ 
 /*      */ 
